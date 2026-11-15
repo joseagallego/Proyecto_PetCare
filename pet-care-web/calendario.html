@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Care | Calendario y Recordatorios</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="eval-bar" aria-label="Navegación rápida del prototipo">
+        <span>📂 Proyecto Pet-Care | Navegación por Archivos HTML</span>
+        <a href="index.html">Login</a>
+        <a href="registro.html">Registro</a>
+        <a href="registro-mascota.html">Mascota</a>
+        <a href="recuperar.html">Recuperar</a>
+        <a href="home.html">Home</a>
+        <a href="alimento.html">Alimento</a>
+        <a href="transporte.html">Transporte</a>
+        <a href="calendario.html" class="current">Calendario</a>
+        <a href="estado-historial.html">Estado</a>
+    </nav>
+
+    <main class="android-frame">
+        <!-- Cabecera Naranja Superior -->
+        <header class="figma-top-banner">
+            <!-- ESPACIO PARA LOGO OFICIAL: img/logo-petcare.png -->
+            <div class="figma-oval-logo">
+                <img src="img/logo-petcare.png" alt="Logo Pet-Care" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#2E7D8B; font-weight:700;">logo-petcare.png</span>
+            </div>
+
+            <div class="figma-user-area">
+                <div class="figma-user-links">
+                    <span>Hola , Jose</span>
+                    <a href="index.html">Salir</a>
+                </div>
+                <!-- ESPACIO PARA AVATAR DE JOSE: img/avatar-jose.png -->
+                <div class="figma-avatar-box">
+                    <img src="img/avatar-jose.png" alt="Avatar Jose" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none; font-size:0.55rem; color:#555;">avatar<br>jose.png</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de 4 Pestañas -->
+        <nav class="figma-tabs-row">
+            <a href="home.html" class="figma-tab-btn">Veterinarias disponibles</a>
+            <a href="alimento.html" class="figma-tab-btn">Alimento de Mascotas</a>
+            <a href="transporte.html" class="figma-tab-btn">Transporte Disponible</a>
+            <a href="calendario.html" class="figma-tab-btn active">Recordatorios</a>
+        </nav>
+
+        <!-- Banner Naranja Calendario y Recordatorios -->
+        <section class="transport-banner">
+            <div class="transport-banner-title">Calendario y<br>Recordatorios</div>
+            <!-- ESPACIO PARA IMAGEN PERRITO EN TINA: img/perrito-bano.png -->
+            <div class="cal-banner-pet">
+                <img src="img/vet-mascoticas.png" alt="Perrito baño" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;">img/<br>vet-mascoticas.png</span>
+            </div>
+        </section>
+
+        <!-- Calendario Estilo Figma (January con argollas) -->
+        <section style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="january-cal-outer">
+                <div class="cal-rings">
+                    <div class="cal-ring"></div>
+                    <div class="cal-ring"></div>
+                </div>
+                <div class="january-cal-inner">
+                    <div class="january-cal-header">January</div>
+                    <div class="january-cal-grid">
+                        <div class="january-cell"></div>
+                        <div class="january-cell"></div>
+                        <div class="january-cell"></div>
+                        <div class="january-cell"></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">1</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">2</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">3</span></div>
+
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">4</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">5</span></div>
+                        <div class="january-cell selected" onclick="selectDay(this)"><span class="january-day-num">6</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">7</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">8</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">9</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">10</span></div>
+
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">11</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">12</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">13</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">14</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">15</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">16</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">17</span></div>
+
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">18</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">19</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">20</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">21</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">22</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">23</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">24</span></div>
+
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">25</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">26</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">27</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">28</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">29</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">30</span></div>
+                        <div class="january-cell" onclick="selectDay(this)"><span class="january-day-num">31</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta Inferior Gris de Recordatorio -->
+            <article class="reminder-figma-card">
+                <div class="driver-col" style="align-items: flex-start;">
+                    <!-- ESPACIO PARA AVATAR RECORDATORIO: img/avatar-recordatorio.png -->
+                    <div class="driver-avatar-slot" style="margin-left: 6px;">
+                        <img src="img/vet-mascoticas.png" alt="Avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">avatar<br>.png</span>
+                    </div>
+                    <div class="food-rating-row">4.8 <span>★★★★★</span></div>
+                    <div class="reminder-time-label">09: am</div>
+                </div>
+
+                <div class="reminder-right-col">
+                    <div class="transport-title">Cita Veterinaria Bruno en veterinaria perritos</div>
+                    <a href="" class="btn-vet-pill" style="padding: 6px 18px;">Agregar Recordatorio</a> <!-- PENDIENTE AGREGAR DIRECCION -->
+                </div>
+            </article>
+        </section>
+
+        <!-- Botón inferior Home para volver al inicio -->
+        <footer class="figma-bottom-home">
+            <!-- ESPACIO PARA ICONO HOME: img/icono-home.png -->
+            <a href="home.html" class="home-icon-btn" title="Volver al Home">
+                <img src="img/icono-home.png" alt="Inicio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#5C4D26; font-weight:700;">home.png</span>
+            </a>
+        </footer>
+    </main>
+
+    <script>
+        function selectDay(cell) {
+            document.querySelectorAll('.january-cell').forEach(function(c) {
+                c.classList.remove('selected');
+            });
+            cell.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

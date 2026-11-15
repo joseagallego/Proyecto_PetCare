@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Care | Transporte Disponible</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="eval-bar" aria-label="Navegación rápida del prototipo">
+        <span>📂 Proyecto Pet-Care | Navegación por Archivos HTML</span>
+        <a href="index.html">Login</a>
+        <a href="registro.html">Registro</a>
+        <a href="registro-mascota.html">Mascota</a>
+        <a href="recuperar.html">Recuperar</a>
+        <a href="home.html">Home</a>
+        <a href="alimento.html">Alimento</a>
+        <a href="transporte.html" class="current">Transporte</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="estado-historial.html">Estado</a>
+    </nav>
+
+    <main class="android-frame">
+        <!-- Cabecera Naranja Superior -->
+        <header class="figma-top-banner">
+            <!-- ESPACIO PARA LOGO OFICIAL: img/logo-petcare.png -->
+            <div class="figma-oval-logo">
+                <img src="img/logo-petcare.png" alt="Logo Pet-Care" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#2E7D8B; font-weight:700;">logo-petcare.png</span>
+            </div>
+
+            <div class="figma-user-area">
+                <div class="figma-user-links">
+                    <span>Hola , Jose</span>
+                    <a href="index.html">Salir</a>
+                </div>
+                <!-- ESPACIO PARA AVATAR DE JOSE: img/avatar-jose.png -->
+                <div class="figma-avatar-box">
+                    <img src="img/avatar-jose.png" alt="Avatar Jose" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none; font-size:0.55rem; color:#555;">avatar<br>jose.png</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de 4 Pestañas -->
+        <nav class="figma-tabs-row">
+            <a href="home.html" class="figma-tab-btn">Veterinarias disponibles</a>
+            <a href="alimento.html" class="figma-tab-btn">Alimento de Mascotas</a>
+            <a href="transporte.html" class="figma-tab-btn active">Transporte Disponible</a>
+            <a href="calendario.html" class="figma-tab-btn">Recordatorios</a>
+        </nav>
+
+        <!-- Banner Naranja Servicio de Transporte -->
+        <section class="transport-banner">
+            <div class="transport-banner-title">Servicio de Transporte</div>
+            <!-- ESPACIO PARA ICONO BANNER TRANSPORTE: img/icono-transporte-banner.png -->
+            <div class="transport-banner-icon">
+                <img src="img/van-icon.svg" alt="Icono Transporte" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;">van-icon<br>.svg</span>
+            </div>
+        </section>
+
+        <!-- Listado de Opciones de Transporte -->
+        <section class="transport-list-box">
+            <div class="transport-count-title">Transporte (5 Opciones)</div>
+
+            <!-- Opción 1: Vehículo Van -->
+            <article class="transport-card">
+                <div class="transport-card-main">
+                    <div class="driver-col">
+                        <!-- ESPACIO PARA AVATAR CONDUCTOR: img/conductor-luis.png -->
+                        <div class="driver-avatar-slot">
+                            <img src="img/conductor.png" alt="Luis Bermudez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span style="display:none;">conductor<br>.png</span>
+                        </div>
+                        <div class="food-rating-row">4.8 <span>★★★★★</span></div>
+                    </div>
+
+                    <div class="transport-mid-col">
+                        <div class="transport-title">Luis Bermudez (vehiculo van) adaptado para mascotas con guacal</div>
+                        <div class="food-price-pill">Desde 25.000</div>
+                        <a href="" class="btn-vet-pill">Solicitar</a>  <!-- PENDIENTE AGREGAR DIRECCION -->
+                    </div>
+
+                    <!-- ESPACIO PARA IMAGEN VAN: img/vehiculo-van.png -->
+                    <div class="transport-vehicle-slot">
+                        <img src="img/van-icon.svg" alt="Vehículo Van" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>vehiculo-van.png</span>
+                    </div>
+                </div>
+                <div class="transport-amenities">Aire Acondicionado, Guacal, cobijas, botiquin</div>
+            </article>
+
+            <!-- Opción 2: Motocicleta -->
+            <article class="transport-card">
+                <div class="transport-card-main">
+                    <div class="driver-col">
+                        <!-- ESPACIO PARA AVATAR CONDUCTOR: img/conductor-luis.png -->
+                        <div class="driver-avatar-slot">
+                            <img src="img/conductor.png" alt="Luis Bermudez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span style="display:none;">conductor<br>.png</span>
+                        </div>
+                        <div class="food-rating-row">4.8 <span>★★★★★</span></div>
+                    </div>
+
+                    <div class="transport-mid-col">
+                        <div class="transport-title">Luis Bermudez (Motocicleta) adaptado para mascotas con guacal</div>
+                        <div class="food-price-pill">Desde 10.000</div>
+                        <a href="" class="btn-vet-pill">Solicitar</a>  <!-- PENDIENTE AGREGAR DIRECCION -->
+                    </div>
+
+                    <!-- ESPACIO PARA IMAGEN MOTO: img/vehiculo-moto.png -->
+                    <div class="transport-vehicle-slot">
+                        <img src="img/vehiculo-moto.png" alt="Motocicleta" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>vehiculo-moto.png</span>
+                    </div>
+                </div>
+                <div class="transport-amenities">Guacal</div>
+            </article>
+
+            <!-- Opción 3: Vehículo Van -->
+            <article class="transport-card">
+                <div class="transport-card-main">
+                    <div class="driver-col">
+                        <!-- ESPACIO PARA AVATAR CONDUCTOR: img/conductor-luis.png -->
+                        <div class="driver-avatar-slot">
+                            <img src="img/conductor.png" alt="Luis Bermudez" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <span style="display:none;">conductor<br>.png</span>
+                        </div>
+                        <div class="food-rating-row">4.8 <span>★★★★★</span></div>
+                    </div>
+
+                    <div class="transport-mid-col">
+                        <div class="transport-title">Luis Bermudez (vehiculo van) adaptado para mascotas con guacal</div>
+                        <div class="food-price-pill">Desde 25.000</div>
+                        <a href="" class="btn-vet-pill">Solicitar</a>  <!-- PENDIENTE AGREGAR DIRECCION -->
+                    </div>
+
+                    <!-- ESPACIO PARA IMAGEN VAN: img/vehiculo-van.png -->
+                    <div class="transport-vehicle-slot">
+                        <img src="img/van-icon.svg" alt="Vehículo Van" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>vehiculo-van.png</span>
+                    </div>
+                </div>
+                <div class="transport-amenities">Aire Acondicionado, Guacal, cobijas, botiquin</div>
+            </article>
+        </section>
+
+        <!-- Botón inferior Home para volver al inicio -->
+        <footer class="figma-bottom-home">
+            <!-- ESPACIO PARA ICONO HOME: img/icono-home.png -->
+            <a href="home.html" class="home-icon-btn" title="Volver al Home">
+                <img src="img/icono-home.png" alt="Inicio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#5C4D26; font-weight:700;">home.png</span>
+            </a>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,1508 @@
+/* =========================================================
+   PET-CARE | HOJA DE ESTILOS GLOBAL (UI KIT + PROTOTIPO FIGMA)
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #FFC107;       /* Amarillo mostaza/dorado */
+    --color-primary-dark: #E0A800;
+    --color-orange-header: #EE9B54; /* Naranja cálido cabeceras internas */
+    --color-orange-card: #E68A3E;   /* Naranja tarjeta perfil mascota */
+    --color-secondary: #E1F5FE;     /* Azul pastel */
+    --color-input-bg: #F3DF9B;      /* Amarillo crema inputs superpuestos */
+    --color-card-gray: #ECECEC;     /* Gris claro tarjetas de servicios */
+    --color-bg-main: #FFFFFF;       /* Blanco puro */
+    --color-text-main: #333333;     /* Gris oscuro */
+    --color-text-muted: #666666;
+    --color-border: #E0E0E0;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #2B2B2B;
+    color: var(--color-text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 10px;
+}
+
+/* Barra superior de navegación rápida para evaluación */
+.eval-bar {
+    background-color: #1E1E1E;
+    color: #FFF;
+    padding: 8px 14px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #3C3C3C;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.eval-bar span {
+    width: 100%;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.eval-bar a {
+    background: #333333;
+    border: 1px solid #4A4A4A;
+    color: #EEEEEE;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.68rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.eval-bar a:hover, .eval-bar a.current {
+    background: var(--color-primary);
+    color: #222;
+    font-weight: 600;
+}
+
+/* Marco Móvil Android Grande */
+.android-frame {
+    background-color: var(--color-bg-main);
+    width: 100%;
+    max-width: 390px;
+    min-height: 810px;
+    border-radius: 24px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* =========================================================
+   PANTALLAS DE AUTENTICACIÓN (LOGIN, REGISTRO, MASCOTA, RECUPERAR)
+   ========================================================= */
+.auth-container {
+    padding: 32px 22px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el espacio y baja los enlaces al fondo */
+    text-align: center;
+    flex: 1;
+}
+
+.auth-top-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Espacio reservado para el Logo Oficial de cabecera (img/logo-petcare.png) */
+.logo-header-slot {
+    width: 210px;
+    height: 75px;
+    border-radius: 16px;
+    background-color: #F4FBFD;
+    border: 1.5px dashed #90CAF9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.logo-header-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.auth-subtitle {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2E7D8B;
+    margin-bottom: 8px;
+}
+
+/* Contenedor de Escena: Imagen de fondo cubriendo todo el ancho y bordes de los inputs */
+.scene-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.repo-image-slot {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: #F4FBFD;
+    border: 2px dashed #90CAF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.repo-image-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.img-placeholder-label {
+    font-size: 0.72rem;
+    color: #546E7A;
+    padding: 6px 10px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.overlay-form {
+    position: relative;
+    width: 88%; /* Queda dentro de los límites de la imagen de fondo */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 45px;
+}
+
+.figma-input {
+    width: 100%;
+    height: 42px;
+    background-color: rgba(243, 219, 146, 0.94);
+    border: 1.5px solid #D9B44A;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-family: var(--font-family);
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #333333;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.figma-input::placeholder {
+    color: #5C4D26;
+}
+
+.figma-input:focus {
+    outline: none;
+    background-color: #FFF6D6;
+    border-color: var(--color-orange-header);
+}
+
+.pet-form-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 8px;
+    width: 90%;
+    margin-top: 35px;
+}
+
+.pet-inputs-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pet-photo-slot {
+    background-color: rgba(243, 219, 146, 0.94);
+    border: 1.5px dashed #C79E32;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #5C4D26;
+    cursor: pointer;
+}
+
+.btn-figma-pill {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(180deg, #FFD54F 0%, #FFC107 100%);
+    border: 1.5px solid #E0A800;
+    color: #333333;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 11px 42px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-top: 12px;
+    transition: transform 0.15s;
+}
+
+.btn-figma-pill:active {
+    transform: scale(0.96);
+}
+
+.auth-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+}
+
+.auth-links a {
+    font-size: 0.82rem;
+    color: #444;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   CABECERA NARANJA Y MENÚ INTERNO (HOME, ALIMENTO, TRANSPORTE, CALENDARIO)
+   ========================================================= */
+.internal-header {
+    background-color: var(--color-orange-header);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+.header-logo-pill {
+    background-color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 50px;
+    height: 36px;
+    min-width: 105px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-logo-pill img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+}
+
+.user-profile-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.user-avatar-slot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #FFE0B2;
+    border: 2px solid #FFFFFF;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.user-avatar-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-pills-bar {
+    display: flex;
+    gap: 5px;
+    padding: 10px 10px 6px;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+}
+
+.nav-pill {
+    flex: 1;
+    background-color: #FFF8E1;
+    border: 1px solid var(--color-primary);
+    color: #333333;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 6px 4px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.nav-pill.active, .nav-pill:hover {
+    background-color: var(--color-primary);
+    font-weight: 700;
+}
+
+.internal-body {
+    padding: 10px 14px 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pet-profile-card {
+    background-color: var(--color-orange-card);
+    border-radius: 12px;
+    padding: 12px;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.pet-avatar-slot {
+    width: 76px;
+    height: 76px;
+    background-color: #FFF3E0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 0.65rem;
+    text-align: center;
+    padding: 4px;
+}
+
+.pet-avatar-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.pet-data-field {
+    background-color: #FFFFFF;
+    color: #333333;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.pet-data-field span {
+    display: block;
+    font-size: 0.58rem;
+    color: #777;
+    font-weight: 400;
+}
+
+.map-slot {
+    width: 100%;
+    height: 155px;
+    border-radius: 10px;
+    border: 1.5px dashed #999;
+    background-color: #E8ECEF;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 0.72rem;
+    text-align: center;
+}
+
+.map-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-row-card {
+    background-color: var(--color-card-gray);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border: 1px solid #DCDCDC;
+}
+
+.service-thumb-slot {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px dashed #BBB;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    color: #666;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.service-thumb-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.service-info {
+    flex: 1;
+    font-size: 0.72rem;
+    line-height: 1.3;
+}
+
+.service-info h4 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.btn-mini-yellow {
+    background-color: #F6E08D;
+    border: 1px solid #D4B445;
+    color: #333;
+    font-size: 0.66rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-mini-yellow:hover {
+    background-color: var(--color-primary);
+}
+
+.orange-search-bar {
+    background-color: var(--color-orange-card);
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: #FFF;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.orange-search-bar input {
+    flex: 1;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    padding: 0 8px;
+    font-size: 0.72rem;
+    font-family: var(--font-family);
+}
+
+.figma-calendar-box {
+    border: 2px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FFF;
+}
+
+.figma-cal-top {
+    background-color: #D32F2F;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px;
+}
+
+.figma-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid #999;
+}
+
+.figma-cal-cell {
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.figma-cal-cell:nth-child(7n) {
+    border-right: none;
+}
+
+.figma-cal-cell.active-green {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+.bottom-home-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 42px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-home-bar a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    padding: 4px 16px;
+}
+
+.state-screen-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Botón inferior con imagen de Home para regresar al Login */
+.home-icon-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #FFF8E1;
+    border: 1.5px dashed #E0A800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-decoration: none;
+    margin: 0 auto;
+    transition: transform 0.15s;
+}
+
+.home-icon-btn:active {
+    transform: scale(0.94);
+}
+
+.home-icon-btn img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Cuadrícula exacta de Figma para Registro de Mascota */
+.pet-figma-columns {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px; /* Deja el centro libre para la ilustración de la veterinaria */
+    width: 92%;
+    align-items: start;
+}
+
+.pet-col-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.figma-textarea {
+    width: 100%;
+    height: 112px;
+    background-color: rgba(243, 219, 146, 0.94);
+    border: 1.5px solid #D9B44A;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: var(--font-family);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #333333;
+    resize: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.figma-textarea::placeholder {
+    color: #5C4D26;
+}
+
+.figma-textarea:focus {
+    outline: none;
+    background-color: #FFF6D6;
+    border-color: var(--color-orange-header);
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS HOME DE FIGMA (VETERINARIAS DISPONIBLES)
+   ========================================================= */
+.figma-top-banner {
+    background-color: #EE9B54;
+    padding: 10px 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    min-height: 76px;
+}
+
+.figma-oval-logo {
+    background-color: #F4FBFD;
+    border-radius: 50%;
+    width: 118px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4px 8px;
+}
+
+.figma-oval-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.figma-user-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.figma-user-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #2E7D8B;
+    padding-bottom: 2px;
+}
+
+.figma-user-links a {
+    color: #2E7D8B;
+    text-decoration: none;
+}
+
+.figma-user-links a:hover {
+    text-decoration: underline;
+}
+
+.figma-avatar-box {
+    width: 44px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #FFE0B2;
+    border: 1.5px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.figma-avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 4 Pestañas en píldora crema */
+.figma-tabs-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    padding: 12px 8px 10px;
+    background-color: #FFFFFF;
+}
+
+.figma-tab-btn {
+    background-color: #F8E7B4;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    padding: 6px 3px;
+    font-size: 0.56rem;
+    font-weight: 600;
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figma-tab-btn.active {
+    border: 1.5px solid #333333;
+    font-weight: 700;
+}
+
+/* Caja Naranja de Filtros de Búsqueda */
+.figma-filter-panel {
+    background-color: #EE9B54;
+    margin: 0 8px;
+    padding: 10px 10px 12px;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 0.85fr;
+    gap: 8px;
+    color: #1E1E1E;
+}
+
+.filter-col-title {
+    font-size: 0.56rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+.filter-range-input {
+    width: 100%;
+    accent-color: #00A878;
+    cursor: pointer;
+    height: 4px;
+}
+
+.filter-range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.54rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.filter-check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-check-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.filter-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #D9D9D9;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.filter-dot.checked {
+    background-color: #00A878;
+    border-radius: 50%;
+}
+
+.filter-tag-gray {
+    background-color: #E0E0E0;
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 0.52rem;
+    font-weight: 600;
+    color: #222;
+    width: 100%;
+    text-align: center;
+}
+
+/* Barra gris + Mapa */
+.figma-map-section {
+    margin: 10px 8px 8px;
+}
+
+.figma-map-header {
+    background-color: #DCDCDC;
+    padding: 4px 8px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.figma-map-frame {
+    width: 100%;
+    height: 175px;
+    background-color: #E8ECEF;
+    border: 1px dashed #999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #555;
+    text-align: center;
+}
+
+.figma-map-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Resultados de Veterinarias */
+.figma-results-wrapper {
+    padding: 2px 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.figma-results-title {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.vet-result-card {
+    background-color: #FBF9F5;
+    border: 1px solid #EFECE6;
+    border-radius: 10px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.vet-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vet-photo-slot {
+    width: 68px;
+    height: 46px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    border: 1px dashed #BBB;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.56rem;
+    color: #666;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.vet-photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vet-details-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vet-name {
+    font-size: 0.64rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.vet-stars {
+    font-size: 0.6rem;
+    color: #F5A623;
+    font-weight: 700;
+}
+
+.vet-stars span {
+    color: #222;
+    margin-left: 3px;
+}
+
+.vet-hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.56rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.vet-card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.btn-vet-pill {
+    background-color: #F6E29F;
+    border: none;
+    border-radius: 12px;
+    padding: 5px 8px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-vet-pill:hover {
+    background-color: var(--color-primary);
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS ALIMENTO DE MASCOTAS (FIGMA)
+   ========================================================= */
+.food-filter-banner {
+    background-color: #EE9B54;
+    margin: 0 8px;
+    border-radius: 12px;
+    padding: 8px 10px 10px;
+    display: grid;
+    grid-template-columns: 1fr 78px;
+    gap: 6px;
+    align-items: center;
+    color: #1E1E1E;
+}
+
+.food-filter-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.food-banner-title {
+    font-size: 0.64rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.food-filter-sub {
+    font-size: 0.58rem;
+    font-weight: 700;
+}
+
+.food-selects-row {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 6px;
+}
+
+.figma-pill-select {
+    background-color: #F8E7B4;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-family: var(--font-family);
+    font-size: 0.54rem;
+    font-weight: 700;
+    color: #222222;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+
+.food-bowl-slot {
+    width: 74px;
+    height: 54px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.52rem;
+    text-align: center;
+    color: #333;
+}
+
+.food-bowl-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Fila superior del listado con ícono carrito */
+.cart-bar-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 6px 14px 2px;
+}
+
+.cart-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #E68A3E;
+    font-size: 0.68rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.cart-icon-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.cart-badge {
+    background-color: #EE9B54;
+    color: #FFF;
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 50%;
+}
+
+/* Contenedor de tarjetas de alimento */
+.food-list-box {
+    background-color: #FBF9F5;
+    margin: 0 10px;
+    padding: 10px 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.food-product-card {
+    background-color: #DCDCDC;
+    border-radius: 12px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 76px 1fr 96px;
+    gap: 8px;
+    align-items: center;
+}
+
+.food-img-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.food-thumb-slot {
+    width: 66px;
+    height: 58px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px dashed #BBB;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #666;
+    text-align: center;
+}
+
+.food-thumb-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.food-rating-row {
+    font-size: 0.54rem;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.food-rating-row span {
+    color: #F5A623;
+}
+
+.food-desc-col {
+    font-size: 0.56rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1E1E1E;
+}
+
+.food-actions-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.food-price-pill {
+    background-color: #F8E7B4;
+    border-radius: 12px;
+    padding: 5px 6px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+}
+
+.btn-add-cart {
+    background-color: #F8E7B4;
+    border: none;
+    border-radius: 12px;
+    padding: 5px 6px;
+    font-family: var(--font-family);
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: #222;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.15s;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--color-primary);
+}
+
+.figma-bottom-home {
+    padding: 10px 0 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS TRANSPORTE DISPONIBLE (FIGMA)
+   ========================================================= */
+.transport-banner {
+    background-color: #EE9B54;
+    margin: 0 8px;
+    border-radius: 12px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #1E1E1E;
+}
+
+.transport-banner-title {
+    font-size: 0.66rem;
+    font-weight: 700;
+}
+
+.transport-banner-icon {
+    width: 44px;
+    height: 36px;
+    background-color: #152238;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #FFF;
+    text-align: center;
+}
+
+.transport-banner-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.transport-list-box {
+    background-color: #FBF9F5;
+    margin: 8px 10px 0;
+    padding: 10px 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.transport-count-title {
+    font-size: 0.64rem;
+    font-weight: 700;
+    color: #1E1E1E;
+    padding-left: 4px;
+}
+
+.transport-card {
+    background-color: #DCDCDC;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transport-card-main {
+    display: grid;
+    grid-template-columns: 74px 1fr 78px;
+    gap: 6px;
+    align-items: center;
+}
+
+.driver-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.driver-avatar-slot {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px dashed #BBB;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.48rem;
+    color: #666;
+    text-align: center;
+}
+
+.driver-avatar-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transport-mid-col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.transport-title {
+    font-size: 0.58rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1E1E1E;
+}
+
+.transport-vehicle-slot {
+    width: 76px;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #555;
+    text-align: center;
+}
+
+.transport-vehicle-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.transport-amenities {
+    font-size: 0.54rem;
+    font-weight: 700;
+    color: #222;
+    padding-left: 2px;
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS RECORDATORIOS (FIGMA - JANUARY)
+   ========================================================= */
+.cal-banner-pet {
+    width: 64px;
+    height: 46px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.5rem;
+    color: #222;
+    text-align: center;
+}
+
+.cal-banner-pet img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.january-cal-outer {
+    background-color: #808080;
+    padding: 14px 12px 12px;
+    border-radius: 4px;
+    width: 245px;
+    margin: 22px auto 14px;
+    position: relative;
+}
+
+.cal-rings {
+    position: absolute;
+    top: -12px;
+    left: 34px;
+    right: 34px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.cal-ring {
+    width: 18px;
+    height: 26px;
+    border: 4px solid #A8A8A8;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.january-cal-inner {
+    border: 1.5px solid #222;
+    background-color: #FFFFFF;
+}
+
+.january-cal-header {
+    background-color: #C62828;
+    color: #F4A4A4;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 800;
+    padding: 6px 0;
+    border-bottom: 1.5px solid #222;
+}
+
+.january-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.january-cell {
+    height: 31px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: #111;
+    cursor: pointer;
+}
+
+.january-cell:nth-child(7n) {
+    border-right: none;
+}
+
+.january-cell:nth-last-child(-n+7) {
+    border-bottom: none;
+}
+
+.january-day-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.january-cell.selected .january-day-num {
+    background-color: #69D186;
+    color: #111;
+}
+
+.reminder-figma-card {
+    background-color: #DCDCDC;
+    border-radius: 12px;
+    margin: 4px 18px 10px;
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.reminder-time-label {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: #1E1E1E;
+    margin-top: 2px;
+}
+
+.reminder-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+/* =========================================================
+   ESTILOS ESPECÍFICOS PANTALLAS DE ESTADO (FIGMA)
+   ========================================================= */
+.figma-status-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 48px;
+    gap: 32px;
+    text-align: center;
+}
+
+.figma-status-msg {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.figma-status-link {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    transition: 0.15s;
+}
+
+.figma-status-link:hover {
+    background-color: #FFF8E1;
+    text-decoration: underline;
+}

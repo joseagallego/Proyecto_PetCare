@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Care | Alimento de Mascotas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="eval-bar" aria-label="Navegación rápida del prototipo">
+        <span>📂 Proyecto Pet-Care | Navegación por Archivos HTML</span>
+        <a href="index.html">Login</a>
+        <a href="registro.html">Registro</a>
+        <a href="registro-mascota.html">Mascota</a>
+        <a href="recuperar.html">Recuperar</a>
+        <a href="home.html">Home</a>
+        <a href="alimento.html" class="current">Alimento</a>
+        <a href="transporte.html">Transporte</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="estado-historial.html">Estado</a>
+    </nav>
+
+    <main class="android-frame">
+        <!-- Cabecera Naranja Superior -->
+        <header class="figma-top-banner">
+            <!-- ESPACIO PARA LOGO OFICIAL: img/logo-petcare.png -->
+            <div class="figma-oval-logo">
+                <img src="img/logo-petcare.png" alt="Logo Pet-Care" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#2E7D8B; font-weight:700;">logo-petcare.png</span>
+            </div>
+
+            <div class="figma-user-area">
+                <div class="figma-user-links">
+                    <span>Hola , Jose</span>
+                    <a href="index.html">Salir</a>
+                </div>
+                <!-- ESPACIO PARA AVATAR DE JOSE: img/avatar-jose.png -->
+                <div class="figma-avatar-box">
+                    <img src="img/avatar-jose.png" alt="Avatar Jose" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none; font-size:0.55rem; color:#555;">avatar<br>jose.png</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de 4 Pestañas -->
+        <nav class="figma-tabs-row">
+            <a href="home.html" class="figma-tab-btn">Veterinarias disponibles</a>
+            <a href="alimento.html" class="figma-tab-btn active">Alimento de Mascotas</a>
+            <a href="transporte.html" class="figma-tab-btn">Transporte Disponible</a>
+            <a href="calendario.html" class="figma-tab-btn">Recordatorios</a>
+        </nav>
+
+        <!-- Banner Naranja de Filtros de Alimento -->
+        <section class="food-filter-banner">
+            <div class="food-filter-left">
+                <div class="food-banner-title">Alimento de Mascotas</div>
+                <div class="food-filter-sub">Filtrar Precios</div>
+                <div class="food-selects-row">
+                    <select class="figma-pill-select" aria-label="Ordenar por precio">
+                        <option>Precios de Mayor a Menor</option>
+                        <option>Precios de Menor a Mayor</option>
+                    </select>
+                    <select class="figma-pill-select" aria-label="Tipo de mascota">
+                        <option>Tipo de Mascota</option>
+                        <option>Perros</option>
+                        <option>Gatos</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ESPACIO PARA IMAGEN PLATO CONCENTRADO: img/plato-alimento.png -->
+            <div class="food-bowl-slot">
+                <img src="img/plato-alimento.png" alt="Plato de alimento" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;">img/<br>plato-alimento.png</span>
+            </div>
+        </section>
+
+        <!-- Ícono Carrito de Compras -->
+        <div class="cart-bar-row">
+            <a href="estado-historial.html" class="cart-icon-btn" title="Ver carrito de compras">
+                <!-- ESPACIO PARA ICONO CARRITO: img/icono-carrito.png -->
+                <img src="img/icono-carrito.png" alt="Carrito" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display:none; font-size: 1.15rem;">🛒</span>
+                <span id="cartCount" class="cart-badge">0</span>
+            </a>
+        </div>
+
+        <!-- Lista de Productos -->
+        <section class="food-list-box">
+            <!-- Producto 1: Premium Dog -->
+            <article class="food-product-card">
+                <div class="food-img-col">
+                    <!-- ESPACIO PARA IMAGEN PRODUCTO 1: img/alimento-premium.png -->
+                    <div class="food-thumb-slot">
+                        <img src="img/alimento-premium.png" alt="Premium Dog" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>alimento-premium.png</span>
+                    </div>
+                    <div class="food-rating-row">4,0 <span>★★★★★</span></div>
+                </div>
+                <div class="food-desc-col">
+                    Premium Dog, perros adultos 15 kgms roscas pequeñas, lleva bonus un rascador gratis
+                </div>
+                <div class="food-actions-col">
+                    <div class="food-price-pill">80.000 cops</div>
+                    <button type="button" class="btn-add-cart" onclick="addToCart(this)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <!-- Producto 2: Barf -->
+            <article class="food-product-card">
+                <div class="food-img-col">
+                    <!-- ESPACIO PARA IMAGEN PRODUCTO 2: img/alimento-barf.png -->
+                    <div class="food-thumb-slot">
+                        <img src="img/alimento-barf.jpeg" alt="Alimento Barf" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>alimento-barf.png</span>
+                    </div>
+                    <div class="food-rating-row">4,0 <span>★★★★★</span></div>
+                </div>
+                <div class="food-desc-col">
+                    Barf, perros adultos 10 kgms Debe mantenerse Congelado
+                </div>
+                <div class="food-actions-col">
+                    <div class="food-price-pill">70.000 cops</div>
+                    <button type="button" class="btn-add-cart" onclick="addToCart(this)">Añadir al carrito</button>
+                </div>
+            </article>
+
+            <!-- Producto 3: Verduras Dog -->
+            <article class="food-product-card">
+                <div class="food-img-col">
+                    <!-- ESPACIO PARA IMAGEN PRODUCTO 3: img/alimento-verduras.png -->
+                    <div class="food-thumb-slot">
+                        <img src="img/alimento-verduras.svg" alt="Verduras Dog" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>alimento-verduras.png</span>
+                    </div>
+                    <div class="food-rating-row">4,0 <span>★★★★★</span></div>
+                </div>
+                <div class="food-desc-col">
+                    Verduras Dog, perros adultos 15 kgms roscas pequeñas, Alimento a base de verduras para fortalecer su digestión
+                </div>
+                <div class="food-actions-col">
+                    <div class="food-price-pill">60.000 cops</div>
+                    <button type="button" class="btn-add-cart" onclick="addToCart(this)">Añadir al carrito</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Botón inferior Home para volver al inicio -->
+        <footer class="figma-bottom-home">
+            <!-- ESPACIO PARA ICONO HOME: img/icono-home.png -->
+            <a href="home.html" class="home-icon-btn" title="Volver al Home">
+                <img src="img/icono-home.png" alt="Inicio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#5C4D26; font-weight:700;">home.png</span>
+            </a>
+        </footer>
+    </main>
+
+    <script>
+        let count = 0;
+        function addToCart(btn) {
+            count++;
+            document.getElementById('cartCount').textContent = count;
+            btn.textContent = '✓ Añadido';
+            setTimeout(() => { btn.textContent = 'Añadir al carrito'; }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Care | Veterinarias Disponibles</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="eval-bar" aria-label="Navegación rápida del prototipo">
+        <span>📂 Proyecto Pet-Care | Navegación por Archivos HTML</span>
+        <a href="index.html">Login</a>
+        <a href="registro.html">Registro</a>
+        <a href="registro-mascota.html">Mascota</a>
+        <a href="recuperar.html">Recuperar</a>
+        <a href="home.html" class="current">Home</a>
+        <a href="alimento.html">Alimento</a>
+        <a href="transporte.html">Transporte</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="estado-registro.html">Estado 1</a><a href="estado-historial.html">Estado 2</a><a href="estado-clave.html">Estado 3</a>
+    </nav>
+
+    <main class="android-frame">
+        <!-- Cabecera Naranja Superior -->
+        <header class="figma-top-banner">
+            <!-- ESPACIO PARA LOGO OFICIAL: img/logo-petcare.png -->
+            <div class="figma-oval-logo">
+                <img src="img/logo-petcare.png" alt="Logo Pet-Care" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none; font-size:0.62rem; color:#2E7D8B; font-weight:700;">logo-petcare.png</span>
+            </div>
+
+            <div class="figma-user-area">
+                <div class="figma-user-links">
+                    <span>Hola , Jose</span>
+                    <a href="index.html">Salir</a>
+                </div>
+                <!-- ESPACIO PARA AVATAR DE JOSE: img/avatar-jose.png -->
+                <div class="figma-avatar-box">
+                    <img src="img/avatar-jose.png" alt="Avatar Jose" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span style="display:none; font-size:0.55rem; color:#555;">avatar<br>jose.png</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de 4 Pestañas -->
+        <nav class="figma-tabs-row">
+            <a href="home.html" class="figma-tab-btn active">Veterinarias disponibles</a>
+            <a href="alimento.html" class="figma-tab-btn">Alimento de Mascotas</a>
+            <a href="transporte.html" class="figma-tab-btn">Transporte Disponible</a>
+            <a href="calendario.html" class="figma-tab-btn">Recordatorios</a>
+        </nav>
+
+        <!-- Panel Naranja de Filtros de Búsqueda -->
+        <section class="figma-filter-panel">
+            <!-- Columna 1: Distancia Máxima -->
+            <div>
+                <div class="filter-col-title">Filtros de Búsqueda de Veterinarias<br>Distancia Máxima (Kms)</div>
+                <input type="range" class="filter-range-input" min="1" max="50" value="20" oninput="document.getElementById('kmVal').textContent = '1 - ' + this.value + ' kms'">
+                <div class="filter-range-labels">
+                    <span id="kmVal">1 - 20 kms</span>
+                    <span>1 - 50 kms</span>
+                </div>
+            </div>
+
+            <!-- Columna 2: Horario de Atención -->
+            <div>
+                <div class="filter-col-title">Horario de Atención</div>
+                <div class="filter-check-list">
+                    <div class="filter-check-item" onclick="toggleFilter(this)">
+                        <span class="filter-dot checked"></span>
+                        <span class="filter-tag-gray">Abierto Ahora</span>
+                    </div>
+                    <div class="filter-check-item" onclick="toggleFilter(this)">
+                        <span class="filter-dot"></span>
+                        <span class="filter-tag-gray">24 Horas</span>
+                    </div>
+                    <div class="filter-check-item" onclick="toggleFilter(this)">
+                        <span class="filter-dot"></span>
+                        <span class="filter-tag-gray">Fines de Semana</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 3: Rango de Precios -->
+            <div>
+                <div class="filter-col-title">Rango de Precios</div>
+                <div class="filter-check-list" style="gap: 10px;">
+                    <span class="filter-tag-gray">Económico</span>
+                    <span class="filter-tag-gray">Premium</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa de Veterinarias Encontradas -->
+        <section class="figma-map-section">
+            <div class="figma-map-header">Veterinarias Encontradas</div>
+            <!-- ESPACIO PARA CAPTURA DEL MAPA: img/mapa-veterinarias.png -->
+            <div class="figma-map-frame">
+                <img src="img/mapa-veterinarias.png" alt="Mapa veterinarias Pereira" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;">🗺️ Ubicar captura de mapa en:<br><strong>img/mapa-veterinarias.png</strong></span>
+            </div>
+        </section>
+
+        <!-- Resultados de Veterinarias -->
+        <section class="figma-results-wrapper">
+            <div class="figma-results-title">Resultados (2 Veterinarias)</div>
+
+            <!-- Tarjeta 1: Clínica Veterinaria "Perritos" -->
+            <article class="vet-result-card">
+                <div class="vet-card-top">
+                    <!-- ESPACIO PARA FOTO CLÍNICA 1: img/vet-perritos.png -->
+                    <div class="vet-photo-slot">
+                        <img src="img/vet-perritos.jpg" alt="Clínica Veterinaria Perritos" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>vet-perritos.png</span>
+                    </div>
+                    <div class="vet-details-col">
+                        <div class="vet-name">Clínica Veterinaria "Perritos"</div>
+                        <div class="vet-stars">★★★★★ <span>4.5</span></div>
+                        <div class="vet-hours-row">
+                            <span>Abierto hasta las 17:00 pm</span>
+                            <span>2.3 kms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vet-card-actions">
+                    <a href="" class="btn-vet-pill">Ver Detalles</a>  <!-- PENDIENTE AGREGAR DIRECCION -->
+                    <a href="" class="btn-vet-pill">Como Llegar</a>     <!-- PENDIENTE AGREGAR DIRECCION -->
+                </div>
+            </article>
+
+            <!-- Tarjeta 2: Clínica Veterinaria "Mascoticas" -->
+            <article class="vet-result-card">
+                <div class="vet-card-top">
+                    <!-- ESPACIO PARA FOTO CLÍNICA 2: img/vet-mascoticas.png -->
+                    <div class="vet-photo-slot">
+                        <img src="img/vet-mascoticas.png" alt="Clínica Veterinaria Mascoticas" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <span style="display:none;">img/<br>vet-mascoticas.png</span>
+                    </div>
+                    <div class="vet-details-col">
+                        <div class="vet-name">Clínica Veterinaria "Mascoticas"</div>
+                        <div class="vet-stars">★★★★★ <span>4.3</span></div>
+                        <div class="vet-hours-row">
+                            <span>Abierto hasta las 18:00 pm</span>
+                            <span>2.3 kms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="vet-card-actions">
+                    <a href="" class="btn-vet-pill">Ver Detalles</a>  <!-- PENDIENTE AGREGAR DIRECCION -->
+                    <a href="" class="btn-vet-pill">Como Llegar</a>     <!-- PENDIENTE AGREGAR DIRECCION -->
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        function toggleFilter(el) {
+            var dot = el.querySelector('.filter-dot');
+            dot.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>

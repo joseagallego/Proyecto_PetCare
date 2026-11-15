@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet-Care | Recuperar Contraseña</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="eval-bar" aria-label="Navegación rápida del prototipo">
+        <span>📂 Proyecto Pet-Care | Navegación por Archivos HTML</span>
+        <a href="index.html">Login</a>
+        <a href="registro.html">Registro</a>
+        <a href="registro-mascota.html">Mascota</a>
+        <a href="recuperar.html" class="current">Recuperar</a>
+        <a href="home.html">Home</a>
+        <a href="alimento.html">Alimento</a>
+        <a href="transporte.html">Transporte</a>
+        <a href="calendario.html">Calendario</a>
+        <a href="estado-clave.html">Estado</a>
+    </nav>
+
+    <main class="android-frame">
+        <div class="auth-container">
+            <!-- Grupo Superior: Logo Oficial + Subtítulo -->
+            <div class="auth-top-group">
+                <!-- ESPACIO PARA LOGO OFICIAL: img/logo-petcare.png -->
+                <div class="logo-header-slot">
+                    <img src="img/logo-petcare.png" alt="Logo Pet-Care" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="img-placeholder-label" style="display:none;">
+                        🏷️ Logo en:<br><strong>img/logo-petcare.png</strong>
+                    </div>
+                </div>
+                <p class="auth-subtitle">Recuperar Contraseña</p>
+            </div>
+
+            <!-- Escena Central: Imagen de fondo con inputs arriba y botón Guardar en la zona media-baja -->
+            <div class="scene-wrapper" style="min-height: 390px; justify-content: flex-start; padding-top: 24px;">
+                <!-- ESPACIO PARA IMAGEN DE FONDO: img/ilustracion-recuperar.png -->
+                <div class="repo-image-slot">
+                    <img src="img/ilustracion-recuperar.png" alt="Ilustración recuperar contraseña" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="img-placeholder-label" style="display:none;">
+                        🖼️ Ilustración fondo:<br><strong>img/ilustracion-recuperar.png</strong>
+                    </div>
+                </div>
+
+                <form class="overlay-form" style="margin-top: 0; gap: 14px;" action="estado-clave.html" method="get">
+                    <input type="email" class="figma-input" placeholder="Correo Electrónico" required>
+                    <input type="password" class="figma-input" placeholder="Nueva Contraseña" required>
+                    <div style="margin-top: 75px;">
+                        <button type="submit" class="btn-figma-pill" style="min-width: 190px;">Guardar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Botón inferior "Iniciar Sesión" debajo de la ilustración -->
+            <div class="auth-links" style="padding-top: 8px; padding-bottom: 12px;">
+                <div>
+                    <a href="index.html" class="btn-figma-pill" style="margin-top: 0; min-width: 190px; background: linear-gradient(180deg, #FFE082 0%, #FFD54F 100%);">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
